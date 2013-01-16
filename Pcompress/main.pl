@@ -6,9 +6,12 @@ use Getopt::Std;
 sub usage;
 
 my %options = ();
-if ( !getopts("c:d:o:h", \%options) )
+my $success = getopts("c:d:o:h", \%options);
+
+if ( !$success )
 {
-  usage;
+  # need to fix here
+  print "Missing argument or option. Use -h for help.\n";
 }
 else
 {
@@ -27,11 +30,20 @@ else
   }
   else
   {
-    print "Missing argument or option. Use -h for help\n"
+    print "Must have -c or -d option and specify a file\n";
   }
 }
 
-
+if (defined $options{o} )
+{
+   # open specified output file to write compressed contents to
+   # print statement to confirm what file output went to
+   print "to file $options{o}... Complete.\n";
+}
+if ($success)  # complete printed statement
+{
+   print "... Complete.\n";
+}
 
 sub usage(){
   print "\nPCOMPRESS USAGE\n\n";

@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 Folders in this repository are minor programs I've written to practice
 programming or brush up on rusty skills
+
 =======
 Pcompress is a tool created with perl to compress and decompress files using Huffman coding method
->>>>>>> 550774423b0d2d52d802e48ca491e9657c2d41fa
+

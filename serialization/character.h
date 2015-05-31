@@ -31,7 +31,10 @@ Character::Character(char NAME[], short int HP, short int MP,
                         short int STR, short int CON, short int DEX, 
                         short int INT){
 
-        strcpy(name, NAME);
+        //strcpy(name,NAME);
+        //strcpy poses a security risk! potential buffer overflow
+        //replaced with strncpy
+        strncpy(name, NAME, sizeof(NAME)/sizeof(char));
         hp = HP;
         mp = MP;
         str = STR;
